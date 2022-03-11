@@ -1,0 +1,27 @@
+@import '../../../Styles/Styles.scss';
+.LeftContainer{
+    // overflow: hidden;
+    // height: 100vh;
+    // img{
+    //     height: 100%;
+    // }
+    height: 100vh;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+.RightContainer{
+    padding: 3rem 0px;
+    h3{
+        font-size: 22px;
+        padding-bottom: 2rem;
+        margin: 0px;
+    }
+    .SignUp-form{
+        p{
+            font-size: 14px;
+            color: #424242;
+            font-weight: 500;
+        }
+    }
+}

@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+  text-decoration: none!important;
+}
+Link{
+    text-decoration: none;
+}
+p{
+    margin:0px;
+}
+ul{
+    margin:0px!important;
+}
+.middle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.verticleAlign{
+    display: flex;
+    align-items: center;
+}

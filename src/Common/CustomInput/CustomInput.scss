@@ -1,0 +1,19 @@
+.inputBox {
+  label {
+    font-size: 14px;
+    color: #424242;
+  }
+  input {
+    padding: 11px 11px;
+    border: none;
+    background: #f6f6fb;
+    &::placeholder {
+      color: #c1c1c1;
+      font-size: 13px;
+    }
+  }
+  .ErrorMsg{
+    font-size: 12px;
+    color: #af2626;
+  }
+}
