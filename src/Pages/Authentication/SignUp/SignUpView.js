@@ -8,13 +8,12 @@ const SignUp = (props) => {
     onSubmitHandler,
     onChangeHandler,
     UserInput,
-    submitted,
-    isFormValid,
+    // submitted,
+    // isFormValid,
+    errorMsg, 
     ...otherProps
   } = props;
-  {
-    console.log("SUBMITTED", submitted);
-  }
+
   return (
     <>
       <section className="SignUp">
@@ -29,7 +28,7 @@ const SignUp = (props) => {
             <div className="col-5 mx-auto RightContainer">
               <div className="SignUp-form">
                 <h3 className="fw-bold">Welcome !</h3>
-                {submitted &&
+                {/* {submitted &&
                   (isFormValid ? (
                     <div class="alert alert-danger mb-3" role="alert">
                       Success! Thank you for registering
@@ -38,7 +37,10 @@ const SignUp = (props) => {
                     <div class="alert alert-danger mb-3" role="alert">
                       Invalid data
                     </div>
-                  ))}
+                  ))} */}
+                     {errorMsg && <div class="alert alert-danger mb-3" role="alert">
+                       {errorMsg}
+                    </div>}
                 <form onSubmit={onSubmitHandler}>
                   <CustomInput
                     type="text"
