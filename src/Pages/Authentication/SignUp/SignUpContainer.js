@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import SignUp from "./SignUpView";
-import { SignInContainer } from "../SignIn";
+import { useNavigate } from "react-router-dom";
+
 const SignUpContainer = () => {
   //state for input fields
   const [UserInput, setUserInput] = useState({
@@ -9,6 +10,7 @@ const SignUpContainer = () => {
     password: "",
     email: "",
   });
+  let navigate = useNavigate();
 
   //state for error message
   const [error, setError] = useState({
@@ -25,6 +27,7 @@ const SignUpContainer = () => {
     const { name, value } = e.target;
     // One liner :mukesh
     setError({ ...error, [name]: value.length ? false : true });
+    setErrorMsg(undefined)
     // ****************************:pooja
     // if(value.length) {
     //     setError({...error, [name]: false});
@@ -41,7 +44,7 @@ const SignUpContainer = () => {
     }
     return false;
   };
-  const signInStartsAsync = async () => {
+  const signUpStartsAsync = async () => {
     try {
       const url = "http://192.168.1.12/sync/signup.php";
       const { username, password, email } = UserInput;
@@ -67,7 +70,7 @@ const SignUpContainer = () => {
           const {data} = response;
           if(data.status) {
             setErrorMsg(undefined);
-            <SignInContainer/>
+            navigate('/login')
           }else {
             setErrorMsg(data.message);
           }
@@ -78,9 +81,13 @@ const SignUpContainer = () => {
     }
   };
   const onSubmitHandler = (e) => {
+
     e.preventDefault();
+    
     if (isFormDataValid()) {
-      signInStartsAsync();
+      signUpStartsAsync();
+    }else{
+      setErrorMsg('All feilds are required')
     }
   };
   return (

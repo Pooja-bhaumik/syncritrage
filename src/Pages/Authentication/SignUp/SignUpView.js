@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import left from "../../../assets/left.png";
 import "./SignUp.scss";
 import { CustomInput } from "../../../Common/CustomInput";
@@ -8,8 +9,6 @@ const SignUp = (props) => {
     onSubmitHandler,
     onChangeHandler,
     UserInput,
-    // submitted,
-    // isFormValid,
     errorMsg, 
     ...otherProps
   } = props;
@@ -28,16 +27,6 @@ const SignUp = (props) => {
             <div className="col-5 mx-auto RightContainer">
               <div className="SignUp-form">
                 <h3 className="fw-bold">Welcome !</h3>
-                {/* {submitted &&
-                  (isFormValid ? (
-                    <div class="alert alert-danger mb-3" role="alert">
-                      Success! Thank you for registering
-                    </div>
-                  ) : (
-                    <div class="alert alert-danger mb-3" role="alert">
-                      Invalid data
-                    </div>
-                  ))} */}
                      {errorMsg && <div class="alert alert-danger mb-3" role="alert">
                        {errorMsg}
                     </div>}
@@ -75,9 +64,9 @@ const SignUp = (props) => {
                     error={otherProps.error.password}
                   />
 
-                  <CustomButton type="submit" />
+                  <CustomButton type="submit" ButtonType = "Sign Up"/>
                   <p className="m-0">
-                    Already have an Account ?<a href="#"> Login </a>
+                    Already have an Account ?<Link to="/login"> Login </Link>
                   </p>
                 </form>
               </div>

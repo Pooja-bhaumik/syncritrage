@@ -2,11 +2,11 @@ import React from "react";
 import './CustomButton.scss'
 import "./CustomButton";
 const CustomButton = (props) => {
-    const {type} = props
+    const {type , ButtonType} = props
   return (
     <>
       <div className="SingBtn  pb-2">
-        <button className="btn" type={type}>Sign Up</button>
+        <button className="btn" type={type}  >{ButtonType}</button>
       </div>
     </>
   );
